@@ -11,6 +11,8 @@ import com.example.movies.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+
 public class BasicActivity extends AppCompatActivity {
 
 
@@ -18,9 +20,8 @@ public class BasicActivity extends AppCompatActivity {
     private TabItem allItem;
     private TabItem searchItem;
     private TabItem savedItem;
-
     private ViewPager viewPager;
-
+    private ArrayList<TabItem> tabItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,14 @@ public class BasicActivity extends AppCompatActivity {
         savedItem= (TabItem) findViewById(R.id.saved_tab);
         viewPager= (ViewPager) findViewById(R.id.view_pager);
 
-        PagerAdaptor pagerAdaptor = new PagerAdaptor(getSupportFragmentManager() , tablayout.getTabCount());
+        tabItems= new ArrayList<TabItem>();
+        tabItems.add(allItem);
+        tabItems.add(searchItem);
+        tabItems.add(savedItem);
 
+
+        PagerAdaptor pagerAdaptor = new PagerAdaptor(getSupportFragmentManager() , tablayout.getTabCount() ,tabItems);
+        viewPager.setAdapter(pagerAdaptor);
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
