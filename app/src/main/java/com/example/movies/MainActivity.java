@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.movies.Activities.BasicActivity;
+import com.example.movies.Pages.BasicActivity;
 
 public class MainActivity extends AppCompatActivity {
 
