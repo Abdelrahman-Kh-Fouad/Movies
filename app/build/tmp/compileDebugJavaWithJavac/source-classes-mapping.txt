@@ -1,0 +1,16 @@
+com/example/movies/Pages/Fragments/SearchFragment.java
+ com.example.movies.Pages.Fragments.SearchFragment
+com/example/movies/BuildConfig.java
+ com.example.movies.BuildConfig
+com/example/movies/Pages/Fragments/SavedFragment.java
+ com.example.movies.Pages.Fragments.SavedFragment
+com/example/movies/Pages/Fragments/AllFragment.java
+ com.example.movies.Pages.Fragments.AllFragment
+com/example/movies/MainActivity.java
+ com.example.movies.MainActivity
+ com.example.movies.MainActivity$1
+com/example/movies/Pages/Fragments/PagerAdaptor.java
+ com.example.movies.Pages.Fragments.PagerAdaptor
+com/example/movies/Pages/BasicActivity.java
+ com.example.movies.Pages.BasicActivity
+ com.example.movies.Pages.BasicActivity$1
