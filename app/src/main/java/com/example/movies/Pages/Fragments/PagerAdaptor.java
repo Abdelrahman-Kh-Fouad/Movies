@@ -1,47 +1,43 @@
 package com.example.movies.Pages.Fragments;
 
-import android.util.Log;
-
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class PagerAdaptor extends FragmentPagerAdapter {
 
-    private int numberOfTabs;
-    private ArrayList<TabItem> tabItems;
-    public PagerAdaptor(FragmentManager fragmentManager , int numberOfTabs , ArrayList<TabItem> tabItems){
+    private static final String[] TAB_TITLES = new String[]{"All", "Search"
+            , "Saved"};
+
+
+    public PagerAdaptor(FragmentManager fragmentManager) {
         super(fragmentManager);
-        this.numberOfTabs = numberOfTabs;
-        this.tabItems =tabItems;
     }
 
     //TODO: sych problem between tabs and fragments
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0 :
-                //tabItems.get(0).setSelected(true);
+        switch (position) {
+            case 0:
                 return AllFragment.newInstance();
-            case 1 :
-                //tabItems.get(1).setSelected(true);
+            case 1:
                 return SearchFragment.newInstance();
-            case 2 :
-                //tabItems.get(2).setSelected(true);
+            case 2:
                 return SavedFragment.newInstance();
             default:
-                return null;
+                throw new IndexOutOfBoundsException("Not a valid index for tabs");
         }
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return TAB_TITLES[position];
     }
 
     @Override
     public int getCount() {
-        return numberOfTabs;
+        return TAB_TITLES.length;
     }
 }
