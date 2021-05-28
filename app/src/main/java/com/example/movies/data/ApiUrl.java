@@ -15,9 +15,11 @@ public class ApiUrl {
     }
     String GetTrendingMovies(String media_type , String time_window){
         String result = context.getString(R.string.basic_url);
+        result+="/trending";
         result+="/" + media_type;
         result+="/" + time_window;
         result+=AddKey();
+        System.out.println(result);
         return result;
     }
 

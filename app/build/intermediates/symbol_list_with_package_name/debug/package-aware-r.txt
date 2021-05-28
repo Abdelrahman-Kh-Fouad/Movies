@@ -1656,6 +1656,7 @@ id add
 id alertTitle
 id aligned
 id all
+id all_fragment_recycler_view
 id all_tab
 id always
 id animateToEnd
@@ -1791,6 +1792,9 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id movie_img
+id movie_name
+id movie_rate
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
 id mtrl_calendar_frame
@@ -1851,6 +1855,7 @@ id rounded
 id row_index_key
 id save_non_transition_alpha
 id save_overlay_view
+id saved_fragment_recycler_view
 id saved_tab
 id sawtooth
 id scale
@@ -2044,6 +2049,7 @@ layout design_text_input_start_icon
 layout fragment_all
 layout fragment_saved
 layout fragment_search
+layout movie_item
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2135,8 +2141,10 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string api_key
 string app_name
 string appbar_scrolling_view_behavior
+string basic_url
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_overflowed_content_description
