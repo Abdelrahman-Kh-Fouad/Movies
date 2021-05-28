@@ -38,9 +38,6 @@ public class AllFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) { }
 
-//        recyclerView = (RecyclerView) getView().findViewById(R.id.all_fragment_recycler_view);
-
-
     }
 
     @Override
@@ -48,7 +45,7 @@ public class AllFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.all_fragment_recycler_view);
         ArrayList<Movie> movies = new ArrayList<Movie>();
-        MoviesRecyclerViewAdapter moviesRecyclerViewAdapter = new MoviesRecyclerViewAdapter(getContext() , movies);
+        MoviesRecyclerViewAdapter moviesRecyclerViewAdapter = new MoviesRecyclerViewAdapter(getContext(),this , movies);
         recyclerView.setAdapter(moviesRecyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ApiRequests apiRequests = new ApiRequests(getContext(),moviesRecyclerViewAdapter , movies);
@@ -57,7 +54,6 @@ public class AllFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.out.println(movies.size());
 
     }
 

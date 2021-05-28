@@ -4,20 +4,13 @@ public class Movie {
     private String name ;
     private int id ;
     private String img;
-    private String rate ;
+    private String voteAverage ;
 
-   public Movie (String name , int id , String img , String rate){
+   public Movie (String name , int id , String img , String voteAverage){
         this.name = name;
         this.id = id;
         this.img = img;
-    }
-
-    public String getRate() {
-        return rate;
-    }
-
-    public void setRate(String rate) {
-        this.rate = rate;
+        this.voteAverage = voteAverage;
     }
 
     public String getName() {
@@ -44,6 +37,11 @@ public class Movie {
         this.img = img;
     }
 
+    public String getVoteAverage() {
+        return voteAverage;
+    }
 
-
+    public void setVoteAverage(String voteAverage) {
+        this.voteAverage = voteAverage;
+    }
 }

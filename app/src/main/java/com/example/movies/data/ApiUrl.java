@@ -13,7 +13,7 @@ public class ApiUrl {
     private String AddKey(){
         return "?api_key="+context.getString(R.string.api_key);
     }
-    String GetTrendingMovies(String media_type , String time_window){
+    public String GetTrendingMovies(String media_type , String time_window){
         String result = context.getString(R.string.basic_url);
         result+="/trending";
         result+="/" + media_type;
@@ -21,6 +21,9 @@ public class ApiUrl {
         result+=AddKey();
         System.out.println(result);
         return result;
+    }
+    public String GetImageUrl(String url){
+        return context.getString(R.string.image_base_url) +url;
     }
 
 

@@ -49,21 +49,27 @@ public class ApiRequests implements DataFromWebsite{
     }
     public List<Movie> JSONArrayToMovies(){
             try {
+
                 JSONArray jsonArray = jsonObject.getJSONArray("results");
+
+
                 for(int i =0 ; i < jsonArray.length() ;i++){
                     JSONObject current = (JSONObject) jsonArray.get(i);
-                    String name ;
-                    try {
-                        name = current.getString("name");
-                    }catch (Exception TitleNotName ){
+                    String name , voteAverge="" , imageUrl="";
+
+                    if (current.isNull("name"))
                         name = current.getString("title");
-                    }
-                    movies.add(new Movie(  name ,
-                                            1 ,
-                                            "7",
-                                            "d" ));
+                    else
+                        name = current.getString("name");
 
+                    if(!current.isNull("vote_average"))
+                        voteAverge = current.getString("vote_average");
 
+                    if(!current.isNull("poster_path"))
+                        imageUrl = current.getString("poster_path");
+
+                    movies.add(new Movie(  name , 1 , imageUrl,  voteAverge));
+                    
                 }
                 moviesRecyclerViewAdapter.notifyDataSetChanged();
 

@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="basic_url">https://api.themoviedb.org/3</string>
     <string name="api_key">99adc62efb1f07ccae4e692bab9209e9</string>
+    <string name="image_base_url">https://image.tmdb.org/t/p/original</string>
 </resources>

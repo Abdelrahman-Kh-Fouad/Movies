@@ -1,33 +1,33 @@
-com/example/movies/pojo/Movie.java
- com.example.movies.pojo.Movie
-com/example/movies/MainActivity.java
- com.example.movies.MainActivity
- com.example.movies.MainActivity$1
+com/example/movies/Pages/Fragments/PagerAdaptor.java
+ com.example.movies.Pages.Fragments.PagerAdaptor
 com/example/movies/Pages/BasicActivity.java
  com.example.movies.Pages.BasicActivity
  com.example.movies.Pages.BasicActivity$1
+com/example/movies/Pages/Fragments/SavedFragment.java
+ com.example.movies.Pages.Fragments.SavedFragment
 com/example/movies/data/Values.java
  com.example.movies.data.Values
  com.example.movies.data.Values$media_type
  com.example.movies.data.Values$time_window
+com/example/movies/MainActivity.java
+ com.example.movies.MainActivity
+ com.example.movies.MainActivity$1
 com/example/movies/recycler/MoviesRecyclerViewViewHolder.java
  com.example.movies.recycler.MoviesRecyclerViewViewHolder
-com/example/movies/recycler/MoviesRecyclerViewAdapter.java
- com.example.movies.recycler.MoviesRecyclerViewAdapter
 com/example/movies/BuildConfig.java
  com.example.movies.BuildConfig
-com/example/movies/data/ApiUrl.java
- com.example.movies.data.ApiUrl
+com/example/movies/Pages/Fragments/AllFragment.java
+ com.example.movies.Pages.Fragments.AllFragment
 com/example/movies/data/DataFromWebsite.java
  com.example.movies.data.DataFromWebsite
 com/example/movies/Pages/Fragments/SearchFragment.java
  com.example.movies.Pages.Fragments.SearchFragment
-com/example/movies/Pages/Fragments/SavedFragment.java
- com.example.movies.Pages.Fragments.SavedFragment
-com/example/movies/Pages/Fragments/PagerAdaptor.java
- com.example.movies.Pages.Fragments.PagerAdaptor
+com/example/movies/pojo/Movie.java
+ com.example.movies.pojo.Movie
+com/example/movies/recycler/MoviesRecyclerViewAdapter.java
+ com.example.movies.recycler.MoviesRecyclerViewAdapter
 com/example/movies/data/ApiRequests.java
  com.example.movies.data.ApiRequests
  com.example.movies.data.ApiRequests$HttpRequest
-com/example/movies/Pages/Fragments/AllFragment.java
- com.example.movies.Pages.Fragments.AllFragment
+com/example/movies/data/ApiUrl.java
+ com.example.movies.data.ApiUrl
