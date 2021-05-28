@@ -2,6 +2,7 @@ package com.example.movies.data;
 import android.content.Context;
 import android.os.AsyncTask;
 import com.example.movies.pojo.Movie;
+import com.example.movies.recycler.MoviesRecyclerViewAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,30 +26,52 @@ public class ApiRequests implements DataFromWebsite{
     private ApiUrl apiUrlHelper;
     //For pool movies
     private Queue<Movie> popularMoviesReposetory;
-
+    private JSONObject jsonObject;
     private List<Movie>movies ;
+    private MoviesRecyclerViewAdapter moviesRecyclerViewAdapter;
 
-    public ApiRequests(Context context ,List<Movie> movies ){
+
+    public ApiRequests(Context context , MoviesRecyclerViewAdapter moviesRecyclerViewAdapter , List<Movie>movies){
         super();
         this.context =context;
         apiUrlHelper = new ApiUrl(context);
         this.movies = movies;
+        this.moviesRecyclerViewAdapter = moviesRecyclerViewAdapter;
 
         //Pools init
         popularMoviesReposetory= new LinkedList<Movie>();
     }
 
-    private Movie GetOnePopualrMovie() throws JSONException {
-        if (popularMoviesReposetory.isEmpty())
-            FillPopularMoviesReposetory();
-        return popularMoviesReposetory.poll();
-    }
     public void FillPopularMoviesReposetory() throws JSONException {
         HttpRequest request = new HttpRequest();
         request.execute(apiUrlHelper.GetTrendingMovies(Values.media_type.ALL , Values.time_window.WEEK));
 
     }
+    public List<Movie> JSONArrayToMovies(){
+            try {
+                JSONArray jsonArray = jsonObject.getJSONArray("results");
+                for(int i =0 ; i < jsonArray.length() ;i++){
+                    JSONObject current = (JSONObject) jsonArray.get(i);
+                    String name ;
+                    try {
+                        name = current.getString("name");
+                    }catch (Exception TitleNotName ){
+                        name = current.getString("title");
+                    }
+                    movies.add(new Movie(  name ,
+                                            1 ,
+                                            "7",
+                                            "d" ));
 
+
+                }
+                moviesRecyclerViewAdapter.notifyDataSetChanged();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return movies;
+    }
     @Override
     public List<Movie> GetMovies(int number) {
         return null;
@@ -64,7 +87,6 @@ public class ApiRequests implements DataFromWebsite{
 //    }
 
     private class HttpRequest extends AsyncTask<String, String, String>{
-        private JSONObject jsonObject ;
         public HttpRequest() {
             super();
         }
@@ -108,27 +130,11 @@ public class ApiRequests implements DataFromWebsite{
             super.onPostExecute(jsonString);
             try {
                 jsonObject = new JSONObject(jsonString);
-                
-                JSONArray jsonArray = jsonObject.getJSONArray("results");
-                for(int i =0 ; i < jsonArray.length() ;i++){
-                    JSONObject current = (JSONObject) jsonArray.get(i);
-                    String name ;
-                    try {
-                        name = current.getString("name");
-                    }catch (Exception TitleNotName ){
-                        name = current.getString("title");
-                    }
-                    popularMoviesReposetory.add(new Movie(  name ,
-                                                            current.getInt("id") ,
-                                                            current.getString("poster_path"),
-                                                            current.getString("rate") ));
-
-
-                }
-                System.out.print(popularMoviesReposetory.size());
+                JSONArrayToMovies();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
         }
 
     }

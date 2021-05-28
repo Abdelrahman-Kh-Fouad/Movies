@@ -16,8 +16,11 @@ import android.widget.AbsListView;
 import android.widget.Button;
 
 import com.example.movies.R;
+import com.example.movies.data.ApiRequests;
 import com.example.movies.pojo.Movie;
 import com.example.movies.recycler.MoviesRecyclerViewAdapter;
+
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
@@ -45,19 +48,16 @@ public class AllFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.all_fragment_recycler_view);
         ArrayList<Movie> movies = new ArrayList<Movie>();
-
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-        movies.add(new Movie("aaa" , 23 , "sd" , "sd"));
-
         MoviesRecyclerViewAdapter moviesRecyclerViewAdapter = new MoviesRecyclerViewAdapter(getContext() , movies);
         recyclerView.setAdapter(moviesRecyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        ApiRequests apiRequests = new ApiRequests(getContext(),moviesRecyclerViewAdapter , movies);
+        try {
+            apiRequests.FillPopularMoviesReposetory();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        System.out.println(movies.size());
 
     }
 

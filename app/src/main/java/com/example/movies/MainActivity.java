@@ -33,22 +33,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        try {
-            test();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
 
     }
 
-    void test () throws JSONException {
-        ApiRequests op = new ApiRequests(this);
-        op.FillPopularMoviesReposetory();
-//        ArrayList<Movie> res = (ArrayList<Movie>) op.GetMovies(4);
-//        for (Movie cur : res){
-//            Log.d("check", "test: "+cur.name);
-//        }
-    }
+//    void test () throws JSONException {
+//        ApiRequests op = new ApiRequests(this ,);
+//        op.FillPopularMoviesReposetory();
+////        ArrayList<Movie> res = (ArrayList<Movie>) op.GetMovies(4);
+////        for (Movie cur : res){
+////            Log.d("check", "test: "+cur.name);
+////        }
+//    }
 
 }
