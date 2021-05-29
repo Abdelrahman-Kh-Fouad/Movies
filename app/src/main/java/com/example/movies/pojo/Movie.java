@@ -1,8 +1,15 @@
 package com.example.movies.pojo;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "movie_table")
 public class Movie {
-    private String name ;
+    @PrimaryKey( autoGenerate = false)
     private int id ;
+
+    private String name ;
+
     private String img;
     private String voteAverage ;
 

@@ -24,7 +24,6 @@ public class ApiRequests implements DataFromWebsite{
 
     private Context context;
     private ApiUrl apiUrlHelper;
-    //For pool movies
     private Queue<Movie> popularMoviesReposetory;
     private JSONObject jsonObject;
     private List<Movie>movies ;
@@ -69,7 +68,7 @@ public class ApiRequests implements DataFromWebsite{
                         imageUrl = current.getString("poster_path");
 
                     movies.add(new Movie(  name , 1 , imageUrl,  voteAverge));
-                    
+
                 }
                 moviesRecyclerViewAdapter.notifyDataSetChanged();
 

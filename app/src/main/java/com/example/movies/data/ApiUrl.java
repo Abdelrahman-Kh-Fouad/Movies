@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.example.movies.R;
 
-public class ApiUrl {
+public class    ApiUrl {
 
     private Context context;
     public ApiUrl(Context context){
