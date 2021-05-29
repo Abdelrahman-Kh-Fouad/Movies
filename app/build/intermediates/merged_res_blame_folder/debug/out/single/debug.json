@@ -4,12 +4,12 @@
         "source": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
-    },
-    {
         "merged": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
     },
     {
         "merged": "/media/abdelrahmankhaled/New Volume/Projects/For Intern/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",

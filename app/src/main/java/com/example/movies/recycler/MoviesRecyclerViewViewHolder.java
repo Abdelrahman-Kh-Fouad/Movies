@@ -16,6 +16,24 @@ public class MoviesRecyclerViewViewHolder extends RecyclerView.ViewHolder {
     private TextView name ;
     private TextView rate ;
     private ImageView img ;
+    private View itSelf;
+
+    public MoviesRecyclerViewViewHolder(@NonNull View itemView) {
+        super(itemView);
+        itSelf =itemView;
+        name = (TextView)itemView.findViewById(R.id.movie_name);
+        rate = (TextView)itemView.findViewById(R.id.movie_rate);
+        img = (ImageView)itemView.findViewById(R.id.movie_img);
+
+    }
+
+    public View getItSelf() {
+        return itSelf;
+    }
+
+    public void setItSelf(View itSelf) {
+        this.itSelf = itSelf;
+    }
 
     public TextView getName() {
         return name;
@@ -41,10 +59,4 @@ public class MoviesRecyclerViewViewHolder extends RecyclerView.ViewHolder {
         this.img = img;
     }
 
-    public MoviesRecyclerViewViewHolder(@NonNull View itemView) {
-        super(itemView);
-        name = (TextView)itemView.findViewById(R.id.movie_name);
-        rate = (TextView)itemView.findViewById(R.id.movie_rate);
-        img = (ImageView)itemView.findViewById(R.id.movie_img);
-    }
 }

@@ -3,6 +3,7 @@ package com.example.movies.recycler;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.TextureView;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.movies.R;
 import com.example.movies.data.ApiUrl;
+import com.example.movies.db.MovieDataBase;
 import com.example.movies.pojo.Movie;
 
 import java.util.List;
@@ -24,6 +26,7 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
     private Context parent;
     private ApiUrl apiUrl;
     private Fragment fragment;
+
 
     public MoviesRecyclerViewAdapter(Context parent , Fragment fragment, List<Movie> movies){
         this.movies = movies;
@@ -43,7 +46,14 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
         Glide.with(fragment).load(apiUrl.GetImageUrl(currentMovie.getImg())).into(holder.getImg());
         holder.getName().setText(currentMovie.getName());
         holder.getRate().setText(currentMovie.getVoteAverage());
-        System.out.println(apiUrl.GetImageUrl(currentMovie.getImg()));
+
+        holder.getItSelf().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MovieDataBase.getInstance(parent).movieDAO().insert(currentMovie);
+
+            }
+        });
 
     }
 

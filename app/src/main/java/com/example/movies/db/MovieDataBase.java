@@ -17,7 +17,7 @@ abstract public class MovieDataBase extends RoomDatabase {
     private final static String DB_name="MoviesDB";
 
     public static synchronized MovieDataBase getInstance(Context baseContext) {
-        if(INSTANCE!=null){
+        if(INSTANCE ==null ){
             INSTANCE = Room.databaseBuilder(baseContext , MovieDataBase.class , DB_name )
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
