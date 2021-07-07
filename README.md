@@ -6,7 +6,7 @@ Get popular movies and save them in database
     <tr>
         <td>
             <img src="/img/1.jpg">
-            <img src="/img/2,jpg">
+            <img src="/img/2.jpg">
 
         </td>
     
